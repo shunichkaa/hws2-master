@@ -1,5 +1,4 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {message0} from '../HW1';
 import s from './MessageSender.module.css';
 
 interface MessageData {
@@ -12,7 +11,7 @@ interface User {
     name: string;
 }
 
-interface Message {
+export interface Message {
     id: number;
     user: User;
     message: MessageData;
@@ -20,19 +19,34 @@ interface Message {
 
 interface MessageSenderProps {
     M: React.ComponentType<{message: Message}>;
+    initialUser: User; // Добавляем пропс для начального пользователя
 }
 
-const CLEAR_TIMEOUT_MS = 4;
-const getCurrentTime = () => new Date().toTimeString().slice(0, 5);
+const CONFIG = {
+    CLEAR_TIMEOUT_MS: 4,
+    KEYBOARD_SHORTCUTS: {
+        SEND: {
+            key: 'Enter',
+            requireShift: true
+        }
+    }
+} as const;
 
-const MessageSender: React.FC<MessageSenderProps> = ({M}) => {
+const MessageSender: React.FC<MessageSenderProps> = ({M, initialUser}) => {
     const textareaRef = useRef<HTMLTextAreaElement>(null);
     const [messages, setMessages] = useState<Message[]>([]);
     const [messageText, setMessageText] = useState('');
 
-    const handleTextChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-        setMessageText(e.currentTarget.value);
-    };
+    const getCurrentTime = () => new Date().toTimeString().slice(0, 5);
+
+    const createNewMessage = (): Message => ({
+        id: messages.length ? messages.length + 1 : 1,
+        user: initialUser,
+        message: {
+            text: messageText,
+            time: getCurrentTime(),
+        },
+    });
 
     const adjustTextareaHeight = () => {
         if (textareaRef.current) {
@@ -45,26 +59,19 @@ const MessageSender: React.FC<MessageSenderProps> = ({M}) => {
         adjustTextareaHeight();
     }, [messageText]);
 
-    const createNewMessage = (): Message => ({
-        id: messages.length ? messages.length + 1 : 1,
-        user: message0.user,
-        message: {
-            text: messageText,
-            time: getCurrentTime(),
-        },
-    });
-
-    const addMessage = () => {
-        if (!messageText.trim()) return;
+    const handleSendMessage = () => {
+        const trimmedMessage = messageText.trim();
+        if (!trimmedMessage) return;
         
         setMessages(prevMessages => [...prevMessages, createNewMessage()]);
-        setTimeout(() => setMessageText(''), CLEAR_TIMEOUT_MS);
+        setTimeout(() => setMessageText(''), CONFIG.CLEAR_TIMEOUT_MS);
     };
 
     const handleKeyDown = (e: React.KeyboardEvent) => {
-        if (e.key === 'Enter' && e.shiftKey) {
+        const {SEND} = CONFIG.KEYBOARD_SHORTCUTS;
+        if (e.key === SEND.key && e.shiftKey === SEND.requireShift) {
             e.preventDefault();
-            addMessage();
+            handleSendMessage();
         }
     };
 
@@ -81,13 +88,13 @@ const MessageSender: React.FC<MessageSenderProps> = ({M}) => {
                     title={'Shift+Enter for send'}
                     placeholder={'Type your message'}
                     value={messageText}
-                    onChange={handleTextChange}
+                    onChange={(e) => setMessageText(e.currentTarget.value)}
                     onKeyDown={handleKeyDown}
                 />
                 <button
                     id={'hw1-button'}
                     className={s.button}
-                    onClick={addMessage}
+                    onClick={handleSendMessage}
                 >
                     Send
                 </button>

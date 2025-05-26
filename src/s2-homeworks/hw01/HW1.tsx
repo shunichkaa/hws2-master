@@ -5,6 +5,7 @@ import s2 from '../../s1-main/App.module.css'
 import FriendMessage from './friend-message/FriendMessage'
 import avatar from './avatar.png'
 
+
 type UserType = {
     avatar: string
     name: string
@@ -62,3 +63,14 @@ const ChatHomework = () => {
 }
 
 export default ChatHomework
+
+interface ChatMessageSenderProps {
+  MessageComponent: React.ComponentType<MessageProps>;
+}
+
+const ChatMessageSender: React.FC<ChatMessageSenderProps> = ({ MessageComponent }) => {
+  return <MessageComponent message={INITIAL_MESSAGES.user} />;
+};
+
+// Использование:
+<ChatMessageSender MessageComponent={Message} />
