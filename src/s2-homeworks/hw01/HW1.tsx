@@ -1,76 +1,79 @@
-import React from 'react'
-import Message from './message/Message'
-import MessageSender from './message-sender/MessageSender'
-import s2 from '../../s1-main/App.module.css'
-import FriendMessage from './friend-message/FriendMessage'
-import avatar from './avatar.png'
+import React from 'react';
+import Message from './message/Message';
+import MessageSender from './message-sender/MessageSender';
+import s2 from '../../s1-main/App.module.css';
+import FriendMessage from './friend-message/FriendMessage';
+import avatar from './avatar.png';
 
-
-type UserType = {
-    avatar: string
-    name: string
+interface User {
+    avatar: string;
+    name: string;
 }
 
-type MessageContentType = {
-    text: string
-    time: string
+interface MessageContent {
+    text: string;
+    time: string;
 }
 
-export type MessageType = {
-    id: number
-    user: UserType
-    message: MessageContentType
+interface ChatMessage {
+    id: number;
+    user: User;
+    message: MessageContent;
 }
 
-const INITIAL_MESSAGES = {
-    user: {
-        id: 0,
+interface MessageProps {
+    message: ChatMessage;
+}
+
+const COMPONENT_ID = 'hw1';
+
+const INITIAL_CHAT_STATE = {
+    messages: {
         user: {
-            avatar,
-            name: 'Some Name',
+            id: 0,
+            user: {
+                avatar,
+                name: 'Some Name',
+            },
+            message: {
+                text: 'some textsome textsome textsome textsome textsome textsome text',
+                time: '22:00',
+            },
         },
-        message: {
-            text: 'some textsome textsome textsome textsome textsome textsome text',
-            time: '22:00',
+        friend: {
+            id: 100,
+            user: {
+                avatar,
+                name: 'Friend Name',
+            },
+            message: {
+                text: 'зеркальное сообщение для тренировки css',
+                time: '22:00',
+            },
         },
     },
-    friend: {
-        id: 100,
-        user: {
-            avatar,
-            name: 'Friend Name',
-        },
-        message: {
-            text: 'зеркальное сообщение для тренировки css',
-            time: '22:00',
-        },
-    },
-} as const
+} as const;
 
-const ChatHomework = () => {
+interface ChatMessengerProps {
+    MessageComponent: React.ComponentType<MessageProps>;
+}
+
+const ChatMessenger: React.FC<ChatMessengerProps> = ({ MessageComponent }) => {
+    const { messages } = INITIAL_CHAT_STATE;
+    
     return (
-        <div id={'hw1'}>
+        <div id={COMPONENT_ID}>
             <div className={s2.hwTitle}>Homework #1</div>
             <div className={s2.hw}>
                 <div>
-                    <Message message={INITIAL_MESSAGES.user} />
-                    <FriendMessage message={INITIAL_MESSAGES.friend} />
+                    <Message message={messages.user} />
+                    <FriendMessage message={messages.friend} />
                 </div>
-                <MessageSender M={Message} />
+                <MessageSender M={MessageComponent} />
             </div>
         </div>
-    )
-}
-
-export default ChatHomework
-
-interface ChatMessageSenderProps {
-  MessageComponent: React.ComponentType<MessageProps>;
-}
-
-const ChatMessageSender: React.FC<ChatMessageSenderProps> = ({ MessageComponent }) => {
-  return <MessageComponent message={INITIAL_MESSAGES.user} />;
+    );
 };
 
-// Использование:
-<ChatMessageSender MessageComponent={Message} />
+export type { ChatMessage };
+export default ChatMessenger;
