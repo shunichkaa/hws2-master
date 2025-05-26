@@ -5,28 +5,6 @@ import s2 from '../../s1-main/App.module.css';
 import FriendMessage from './friend-message/FriendMessage';
 import avatar from './avatar.png';
 
-interface User {
-    avatar: string;
-    name: string;
-}
-
-interface MessageContent {
-    text: string;
-    time: string;
-}
-
-interface ChatMessage {
-    id: number;
-    user: User;
-    message: MessageContent;
-}
-
-interface MessageProps {
-    message: ChatMessage;
-}
-
-const COMPONENT_ID = 'hw1';
-
 const INITIAL_CHAT_STATE = {
     messages: {
         user: {
@@ -54,26 +32,24 @@ const INITIAL_CHAT_STATE = {
     },
 } as const;
 
-interface ChatMessengerProps {
-    MessageComponent: React.ComponentType<MessageProps>;
-}
-
-const ChatMessenger: React.FC<ChatMessengerProps> = ({ MessageComponent }) => {
+const HW1: React.FC = () => {
     const { messages } = INITIAL_CHAT_STATE;
-    
+
     return (
-        <div id={COMPONENT_ID}>
+        <div id="hw1">
             <div className={s2.hwTitle}>Homework #1</div>
             <div className={s2.hw}>
                 <div>
                     <Message message={messages.user} />
                     <FriendMessage message={messages.friend} />
                 </div>
-                <MessageSender M={MessageComponent} />
+                <MessageSender
+                    M={Message}
+                    initialUser={messages.user.user}
+                />
             </div>
         </div>
     );
 };
 
-export type { ChatMessage };
-export default ChatMessenger;
+export default HW1;

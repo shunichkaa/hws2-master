@@ -1,43 +1,38 @@
-/* Styles for messages received from a friend (left-aligned) */
 .friendMessage {
     display: flex;
     align-items: flex-start;
     margin: 16px;
-    /* font-family: Montserrat, sans-serif; <-- Removed, assuming global application */
     font-weight: 400;
     font-size: 16px;
     line-height: 100%;
 }
-
 .friendImageAndText {
     display: flex;
     gap: 12px;
 }
-
 .friendImageAndText img {
     width: 40px;
     height: 40px;
     border-radius: 50%;
 }
-
 .friendText {
     background: #f6f7fb;
     border-radius: 16px;
     padding: 12px 16px;
     max-width: 400px;
-    /* font-family: Montserrat, sans-serif; <-- Removed, assuming global application */
     font-size: 16px;
     line-height: 1.4;
 }
-
 .friendName {
     font-weight: 600;
     margin-bottom: 4px;
 }
-
 .friendTime {
     font-size: 12px;
     color: gray;
     margin-top: 4px;
     margin-left: 52px;
+}
+.friendMessageText {
+    margin: 0;
 }

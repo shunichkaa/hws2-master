@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import s from './MessageSender.module.css';
 
 interface MessageData {
@@ -18,8 +18,8 @@ export interface Message {
 }
 
 interface MessageSenderProps {
-    M: React.ComponentType<{message: Message}>;
-    initialUser: User; // Добавляем пропс для начального пользователя
+    M: React.ComponentType<{ message: Message }>;
+    initialUser: User;
 }
 
 const CONFIG = {
@@ -32,7 +32,7 @@ const CONFIG = {
     }
 } as const;
 
-const MessageSender: React.FC<MessageSenderProps> = ({M, initialUser}) => {
+const MessageSender: React.FC<MessageSenderProps> = ({ M, initialUser }) => {
     const textareaRef = useRef<HTMLTextAreaElement>(null);
     const [messages, setMessages] = useState<Message[]>([]);
     const [messageText, setMessageText] = useState('');
@@ -62,13 +62,13 @@ const MessageSender: React.FC<MessageSenderProps> = ({M, initialUser}) => {
     const handleSendMessage = () => {
         const trimmedMessage = messageText.trim();
         if (!trimmedMessage) return;
-        
+
         setMessages(prevMessages => [...prevMessages, createNewMessage()]);
         setTimeout(() => setMessageText(''), CONFIG.CLEAR_TIMEOUT_MS);
     };
 
     const handleKeyDown = (e: React.KeyboardEvent) => {
-        const {SEND} = CONFIG.KEYBOARD_SHORTCUTS;
+        const { SEND } = CONFIG.KEYBOARD_SHORTCUTS;
         if (e.key === SEND.key && e.shiftKey === SEND.requireShift) {
             e.preventDefault();
             handleSendMessage();
