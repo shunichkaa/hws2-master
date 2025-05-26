@@ -1,6 +1,5 @@
 import React from 'react'
 import s from './FriendMessage.module.css'
-
 // создать тип вместо any и отобразить приходящие данные
 const FriendMessage = (props: any) => {
     return (
@@ -12,7 +11,6 @@ const FriendMessage = (props: any) => {
                 <img
                     id={'hw1-friend-avatar-' + props.message.id}
                     // создаёт студент
-
                     //
                 />
                 <div className={s.friendText}>
@@ -21,7 +19,6 @@ const FriendMessage = (props: any) => {
                         className={s.friendName}
                     >
                         {/*создаёт студент*/}
-
                         {/**/}
                     </div>
                     <pre
@@ -29,7 +26,6 @@ const FriendMessage = (props: any) => {
                         className={s.friendMessageText}
                     >
                         {/*создаёт студент*/}
-
                         {/**/}
                     </pre>
                 </div>
@@ -39,11 +35,9 @@ const FriendMessage = (props: any) => {
                 className={s.friendTime}
             >
                 {/*создаёт студент*/}
-
                 {/**/}
             </div>
         </div>
     )
 }
-
 export default FriendMessage

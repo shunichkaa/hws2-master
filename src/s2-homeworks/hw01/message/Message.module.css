@@ -1,31 +1,42 @@
+/* Styles for messages sent by the user (right-aligned) */
 .message {
-
+    display: flex;
+    justify-content: flex-end;
+    margin: 16px;
 }
 
 .imageAndText {
-
+    display: flex;
+    gap: 12px;
+    flex-direction: row-reverse;
 }
 
 .imageAndText img {
-
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
 }
 
 .text {
-
-}
-
-.text:after {
-
+    background: #007aff;
+    color: white;
+    border-radius: 16px;
+    padding: 12px 16px;
+    max-width: 400px;
+    /* font-family: Montserrat, sans-serif; <-- Removed, assuming global application */
+    font-size: 16px;
+    line-height: 1.4;
 }
 
 .name {
-
-}
-
-.messageText {
-
+    font-weight: 600;
+    margin-bottom: 4px;
 }
 
 .time {
-
+    font-size: 12px;
+    color: gray;
+    margin-top: 4px;
+    margin-right: 52px;
+    text-align: right;
 }
