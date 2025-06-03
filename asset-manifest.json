@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/hws2-master/static/css/main.7ce94bb9.chunk.css",
-    "main.js": "/hws2-master/static/js/main.418247cd.chunk.js",
-    "main.js.map": "/hws2-master/static/js/main.418247cd.chunk.js.map",
+    "main.css": "/hws2-master/static/css/main.81c3b285.chunk.css",
+    "main.js": "/hws2-master/static/js/main.39349fed.chunk.js",
+    "main.js.map": "/hws2-master/static/js/main.39349fed.chunk.js.map",
     "runtime~main.js": "/hws2-master/static/js/runtime~main.bae38d49.js",
     "runtime~main.js.map": "/hws2-master/static/js/runtime~main.bae38d49.js.map",
-    "static/js/2.a2c69007.chunk.js": "/hws2-master/static/js/2.a2c69007.chunk.js",
-    "static/js/2.a2c69007.chunk.js.map": "/hws2-master/static/js/2.a2c69007.chunk.js.map",
+    "static/js/2.d499d4e6.chunk.js": "/hws2-master/static/js/2.d499d4e6.chunk.js",
+    "static/js/2.d499d4e6.chunk.js.map": "/hws2-master/static/js/2.d499d4e6.chunk.js.map",
     "index.html": "/hws2-master/index.html",
-    "precache-manifest.56c2ab0f3c9f970db9c27f3da23c984f.js": "/hws2-master/precache-manifest.56c2ab0f3c9f970db9c27f3da23c984f.js",
+    "precache-manifest.783064cad15252f5ef7c04d70613fc0e.js": "/hws2-master/precache-manifest.783064cad15252f5ef7c04d70613fc0e.js",
     "service-worker.js": "/hws2-master/service-worker.js",
-    "static/css/main.7ce94bb9.chunk.css.map": "/hws2-master/static/css/main.7ce94bb9.chunk.css.map",
+    "static/css/main.81c3b285.chunk.css.map": "/hws2-master/static/css/main.81c3b285.chunk.css.map",
     "static/media/avatar.png": "/hws2-master/static/media/avatar.0f8da672.png"
   }
 }
