@@ -1,23 +1,25 @@
-import React from 'react'
-import { HashRouter } from 'react-router-dom'
-import { Layout } from './layout/Layout'
-import Pages from './Pages'
+import React from 'react';
+import {Layout} from './layout/Layout';
+import Pages, {PATH} from './Pages';
+import {NavLink} from "react-router-dom";
 
-/*
-* 1 - в файле Pages.tsx дописать роуты на все страницы
-* 2 - в файле Sidebar.tsx дописать className так чтоб вешался класс s.active когда мы уже на соответствующей странице
-* 3 - застилизовать хэдэр и сайдбар в соответствии с дизайном
-* */
+// Удаляем несуществующий импорт стилей
 
 function HW5() {
+    // Так как у нас нет доступа к фактическим стилям, удаляем функцию getNavLinkClassName
+    // и используем строковый литерал для возможного будущего стиля
     return (
-        <HashRouter>
-            {/*в gh-pages лучше работает HashRouter, с BrowserRouter скорее всего не пройдёт тест*/}
-            <Layout>
-                <Pages />
-            </Layout>
-        </HashRouter>
-    )
+        <Layout>
+            <NavLink
+                to={PATH.PRE_JUNIOR}
+                className={({isActive}) => isActive ? 'active' : ''}
+            >
+                PreJunior
+            </NavLink>
+            {/* Здесь можно добавить другие ссылки на страницы */}
+            <Pages/>
+        </Layout>
+    );
 }
 
-export default HW5
+export default HW5;
