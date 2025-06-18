@@ -1,17 +1,18 @@
 {
   "files": {
-    "main.css": "/hws2-master/static/css/main.98b2117d.chunk.css",
-    "main.js": "/hws2-master/static/js/main.34ac1200.chunk.js",
-    "main.js.map": "/hws2-master/static/js/main.34ac1200.chunk.js.map",
-    "runtime~main.js": "/hws2-master/static/js/runtime~main.bae38d49.js",
-    "runtime~main.js.map": "/hws2-master/static/js/runtime~main.bae38d49.js.map",
-    "static/js/2.9a896db4.chunk.js": "/hws2-master/static/js/2.9a896db4.chunk.js",
-    "static/js/2.9a896db4.chunk.js.map": "/hws2-master/static/js/2.9a896db4.chunk.js.map",
+    "main.css": "/hws2-master/static/css/main.da12b477.css",
+    "main.js": "/hws2-master/static/js/main.fc9ec025.js",
+    "static/media/avatar.png": "/hws2-master/static/media/avatar.d947cb9d0d13765666b6.png",
+    "static/media/404.svg": "/hws2-master/static/media/404.9ec31c0ba8d95b0480272e46af98c955.svg",
+    "static/media/closeOutline.svg": "/hws2-master/static/media/closeOutline.b64ba402fac8a549bc2de97e9cf84a61.svg",
+    "static/media/checked.svg": "/hws2-master/static/media/checked.b75ca55e8759862b4083.svg",
     "index.html": "/hws2-master/index.html",
-    "precache-manifest.624f645c8c933af5844ead0d5eb43be4.js": "/hws2-master/precache-manifest.624f645c8c933af5844ead0d5eb43be4.js",
-    "service-worker.js": "/hws2-master/service-worker.js",
-    "static/css/main.98b2117d.chunk.css.map": "/hws2-master/static/css/main.98b2117d.chunk.css.map",
-    "static/media/avatar.png": "/hws2-master/static/media/avatar.0f8da672.png",
-    "static/media/SuperCheckbox.module.css": "/hws2-master/static/media/checked.ebd9a878.svg"
-  }
+    "static/media/burger.svg": "/hws2-master/static/media/burger.700e416f7bfe3697f96b36c778d25355.svg",
+    "main.da12b477.css.map": "/hws2-master/static/css/main.da12b477.css.map",
+    "main.fc9ec025.js.map": "/hws2-master/static/js/main.fc9ec025.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.da12b477.css",
+    "static/js/main.fc9ec025.js"
+  ]
 }
