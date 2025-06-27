@@ -3,3 +3,48 @@
 
 .editableSpanContainer {
 }
+.spanBlock {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: #f5f6fa;
+    border-radius: 8px;
+    min-height: 40px;
+    cursor: pointer;
+    transition: box-shadow 0.2s;
+  }
+  
+  .spanBlock:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  
+  .span {
+    font-size: 16px;
+    color: #222;
+    min-width: 80px;
+    outline: none;
+  }
+  
+  .input {
+    font-size: 16px;
+    padding: 8px 12px;
+    border: 1px solid #bdbdbd;
+    border-radius: 8px;
+    background: #fff;
+    color: #222;
+    width: 100%;
+    outline: none;
+    transition: border 0.2s;
+  }
+  
+  .input:focus {
+    border: 1.5px solid #1976d2;
+  }
+  
+  .pen {
+    width: 18px;
+    height: 18px;
+    opacity: 0.7;
+    margin-right: 6px;
+  }
