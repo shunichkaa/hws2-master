@@ -7,6 +7,7 @@ import React, {
 import s from './SuperEditableSpan.module.css'
 import SuperInputText from '../../../hw04/common/c1-SuperInputText/SuperInputText'
 import editIcon from './editIcon.svg'
+import { restoreState } from '../../localStorage/localStorage'
 
 // тип пропсов обычного инпута
 type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>,
@@ -40,12 +41,17 @@ const SuperEditableSpan: React.FC<SuperEditableSpanType> = (
     const {children, onDoubleClick, className, defaultText, ...restSpanProps} =
     spanProps || {}
 
-    const onEnterCallback = () => {
-        // выключить editMode при нажатии Enter // делают студенты
+    const [value, setValue] = useState<string>(() =>
+        restoreState<string>('editable-span-value', '')
+    )
 
+    const onEnterCallback = () => {
+        setEditMode(false)
         onEnter?.()
     }
+
     const onBlurCallback = (e: React.FocusEvent<HTMLInputElement>) => {
+        setEditMode(false)
         // выключить editMode при нажатии за пределами инпута // делают студенты
 
         onBlur?.(e)
@@ -53,6 +59,7 @@ const SuperEditableSpan: React.FC<SuperEditableSpanType> = (
     const onDoubleClickCallBack = (
         e: React.MouseEvent<HTMLSpanElement, MouseEvent>
     ) => {
+        setEditMode(true)
         // включить editMode при двойном клике // делают студенты
 
         onDoubleClick?.(e)
@@ -60,6 +67,10 @@ const SuperEditableSpan: React.FC<SuperEditableSpanType> = (
 
     const spanClassName = s.span
         + (className ? ' ' + className : '')
+
+    const handleRestore = () => {
+        setValue(restoreState<string>('editable-span-value', ''))
+    }
 
     return (
         <>
