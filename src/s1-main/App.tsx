@@ -5,16 +5,17 @@ import HW2 from "../s2-homeworks/hw02/HW2";
 import HW3 from "../s2-homeworks/hw03/HW3";
 import HW4 from "../s2-homeworks/hw04/HW4";
 import HW5 from "../s2-homeworks/hw05/HW5";
+import HW6 from "../s2-homeworks/hw06/HW6";
 
 function App() {
     return (
         <div className={s.App}>
-            <HW1 />
+            {/* <HW1 />
             <HW2 />
             <HW3 />
-            <HW4 />
+            <HW4 /> */}
             <HW5 />
-            {/*<HW6 />*/}
+            <HW6 />
             {/*<HW7 />*/}
             {/*<HW8 />*/}
             {/*<HW9 />*/}
