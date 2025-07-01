@@ -15,43 +15,27 @@ const HW6 = () => {
     const [value, setValue] = useState<string>('')
 
     const save = () => {
-        saveState<string>('hw6-editable-span-value', value)
+        saveState<string>('editable-span-value', value)
     }
     const restore = () => {
-        const restoredValue = restoreState<string>('hw6-editable-span-value', '')
-        setValue(restoredValue)
+        setValue(restoreState<string>('editable-span-value', ''))
     }
 
     return (
-        <div id={'hw6'}>
-            <div className={s2.hwTitle}>Homework #6</div>
-
-            {/*демонстрация возможностей компоненты:*/}
-            <div className={s2.hw}>
-                <div className={s.editableSpanContainer}>
-                    <SuperEditableSpan
-                        id={'hw6-spanable-input'}
-                        value={value}
-                        onChangeText={setValue}
-                        spanProps={{
-                            id: 'hw6-editable-span',
-                            defaultText: 'enter text...',
-                        }}
-                    />
-                </div>
-
-                <div className={s.buttonsContainer}>
-                    <SuperButton id={'hw6-save'} onClick={save}>
-                        Save to ls
-                    </SuperButton>
-                    <SuperButton
-                        id={'hw6-restore'}
-                        onClick={restore}
-                        xType={'secondary'}
-                    >
-                        Get from ls
-                    </SuperButton>
-                </div>
+        <div className={s.hwContainer} id={'hw6-task'}>
+            <div className={s.hwTitle}>Hometask № 6</div>
+            <SuperEditableSpan
+                value={value}
+                onChangeText={setValue}
+                spanProps={{id: 'hw6-editable-span', defaultText: 'Edit text'}}
+            />
+            <div style={{marginTop: 24}}>
+                <button id={'hw6-save'} className={s.button} onClick={save}>
+                    Save to ls
+                </button>
+                <button id={'hw6-restore'} className={s.button} onClick={restore} style={{color: '#1976d2', background: '#fff', border: '1px solid #1976d2'}}>
+                    Get from ls
+                </button>
             </div>
         </div>
     )

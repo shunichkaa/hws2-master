@@ -36,8 +36,8 @@ const HW1: React.FC = () => {
     const { messages } = INITIAL_CHAT_STATE;
 
     return (
-        <div id="hw1">
-            <div className={s2.hwTitle}>Homework #1</div>
+        <div className={s2.hwSection} id="hw1">
+            <div className={s2.hwTitle}>Hometask № 1</div>
             <div className={s2.hw}>
                 <div>
                     <Message message={messages.user} />

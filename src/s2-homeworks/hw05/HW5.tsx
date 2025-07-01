@@ -1,7 +1,6 @@
 import React from 'react';
 import {Layout} from './layout/Layout';
-import Pages, {PATH} from './Pages';
-import {NavLink} from "react-router-dom";
+import Pages from './Pages';
 
 // Удаляем несуществующий импорт стилей
 
@@ -10,13 +9,6 @@ function HW5() {
     // и используем строковый литерал для возможного будущего стиля
     return (
         <Layout>
-            <NavLink
-                to={PATH.PRE_JUNIOR}
-                className={({isActive}) => isActive ? 'active' : ''}
-            >
-                PreJunior
-            </NavLink>
-            {/* Здесь можно добавить другие ссылки на страницы */}
             <Pages/>
         </Layout>
     );

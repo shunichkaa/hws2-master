@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import Affairs from './affairs/Affairs'
 import s2 from '../../s1-main/App.module.css'
+import {AffairPriorityType, AffairType, FilterType} from './types'
 
 /*
 * 7 - в файле Affairs.tsx дописать типизацию пропсов
@@ -9,15 +10,6 @@ import s2 from '../../s1-main/App.module.css'
 * 10 - в файле Affair.tsx дописать функции deleteCallback и использовать
 * 11 - в файле Affair.tsx отобразить приходящие данные
 * */
-
-// types
-export type AffairPriorityType = 'high' | 'middle' | 'low'
-export type AffairType = {
-    _id: number
-    name: string
-    priority: AffairPriorityType
-}
-export type FilterType = 'all' | AffairPriorityType
 
 // constants
 const defaultAffairs: AffairType[]  = [
@@ -29,16 +21,14 @@ const defaultAffairs: AffairType[]  = [
 ]
 
 // pure helper functions
-export const filterAffairs = (affairs: AffairType[] , filter: string): any[] => {
+export const filterAffairs = (affairs: AffairType[], filter: FilterType): AffairType[] => {
     if (filter === 'all') return affairs
     return affairs.filter(affair => affair.priority === filter)
 }
 
-
-export const deleteAffair = (affairs: AffairType[] , _id: number): AffairType[]  => {
+export const deleteAffair = (affairs: AffairType[], _id: number): AffairType[]  => {
     return affairs.filter(affair => affair._id !== _id)
 }
-
 
 function HW2() {
     const [affairs, setAffairs] = useState<AffairType[] >(defaultAffairs)
@@ -50,8 +40,8 @@ function HW2() {
     }
 
     return (
-        <div id={'hw2'}>
-            <div className={s2.hwTitle}>Homework #2</div>
+        <div className={s2.hwSection} id={'hw2'}>
+            <div className={s2.hwTitle}>Hometask № 2</div>
             <div className={s2.hw}>
                 <Affairs
                     data={filteredAffairs}

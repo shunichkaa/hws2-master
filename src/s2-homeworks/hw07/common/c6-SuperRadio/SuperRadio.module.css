@@ -1,15 +1,48 @@
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 15px;
+  color: #222;
+  gap: 8px;
+  font-family: 'Inter', Arial, sans-serif;
+}
+
 .radio {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid #1976d2;
+  border-radius: 50%;
+  background: #fff;
+  margin-right: 8px;
+  position: relative;
+  transition: border 0.2s;
+  outline: none;
 }
 
 .radio::before {
 }
 
-
 .radio:checked::before {
 }
 
-.label {
+.radio:checked {
+  border: 5px solid #1976d2;
+  background-clip: content-box;
+  background-color: #fff;
 }
 
-.options {
+.radio:focus {
+  outline: 2px solid #1976d2;
+}
+
+.span {
+  user-select: none;
 }

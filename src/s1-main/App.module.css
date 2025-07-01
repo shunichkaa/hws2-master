@@ -1,11 +1,33 @@
 .App {
     --header_height: 60px;
+    text-align: center;
 }
 
 .hw {
 
 }
 
-.hwTitle {
+.hwSection {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(60, 60, 60, 0.04);
+    padding: 40px 48px 48px 48px;
+    margin-bottom: 32px;
+    border: 1px solid #ececec;
+}
 
+.hwTitle {
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 32px;
+    letter-spacing: 0;
+    text-align: left;
+}
+
+.hwDivider {
+    border: none;
+    border-top: 1px solid #ececec;
+    margin: 0 -48px 40px -48px;
 }

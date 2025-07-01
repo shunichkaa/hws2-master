@@ -1,55 +1,83 @@
 .buttonContainer {
     display: flex;
-    gap: 24px;
-    margin-bottom: 32px;
-}
-
-.all {
-    --color: #06c;
-}
-
-.low {
-    --color: #0c2;
-}
-
-.high {
-    --color: #c00;
-}
-
-.middle {
-    --color: #cc9c00;
+    gap: 12px;
+    margin-bottom: 24px;
 }
 
 .button {
-    padding: 5px 15px;
-
-    background: transparent;
-    color: var(--color);
-
-    border: 1px solid var(--color);
-    border-radius: 15px;
+    border: none;
     outline: none;
-
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 20px;
+    padding: 6px 20px;
+    border-radius: 16px;
+    font-size: 16px;
+    font-family: 'Inter', Arial, sans-serif;
+    font-weight: 500;
     cursor: pointer;
+    background: #f5f6fa;
+    color: #222;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
 }
 
-.button:active {
-    background: var(--color);
-    color: white;
+.all {
+    background: #2563eb;
+    color: #fff;
 }
 
-.active {
-    background: var(--color);
-    color: white;
+.all.active {
+    box-shadow: 0 2px 8px rgba(37,99,235,0.08);
+}
+
+.low {
+    border: 2px solid #27ae60;
+    color: #27ae60;
+    background: #f6fff9;
+}
+
+.low.active {
+    background: #27ae60;
+    color: #fff;
+}
+
+.high {
+    border: 2px solid #eb5757;
+    color: #eb5757;
+    background: #fff6f6;
+}
+
+.high.active {
+    background: #eb5757;
+    color: #fff;
+}
+
+.middle {
+    border: 2px solid #f2c94c;
+    color: #f2c94c;
+    background: #fffbe6;
+}
+
+.middle.active {
+    background: #f2c94c;
+    color: #fff;
 }
 
 .affairs {
     display: flex;
-    gap: 17px;
     flex-wrap: wrap;
-    max-width: 450px;
+    gap: 16px;
+}
+
+.high {
+    border-color: #eb5757;
+}
+
+.low {
+    border-color: #27ae60;
+}
+
+.middle {
+    border-color: #f2c94c;
+}
+
+.active {
+    box-shadow: 0 2px 8px rgba(60,60,60,0.08);
 }

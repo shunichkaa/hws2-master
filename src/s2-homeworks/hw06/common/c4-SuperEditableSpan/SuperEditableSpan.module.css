@@ -1,11 +1,47 @@
 .spanBlock {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  background: #f5f6fa;
+  border-radius: 8px;
+  min-height: 40px;
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+}
+
+.spanBlock:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
 
 .span {
+  font-size: 16px;
+  color: #222;
+  min-width: 80px;
+  outline: none;
+  font-family: 'Inter', Arial, sans-serif;
 }
 
 .input {
+  font-size: 16px;
+  padding: 8px 12px;
+  border: 1.5px solid #bdbdbd;
+  border-radius: 8px;
+  background: #fff;
+  color: #222;
+  width: 100%;
+  outline: none;
+  transition: border 0.2s;
+  font-family: 'Inter', Arial, sans-serif;
+}
+
+.input:focus {
+  border: 1.5px solid #2563eb;
 }
 
 .pen {
+  width: 18px;
+  height: 18px;
+  opacity: 0.7;
+  margin-right: 6px;
 }

@@ -1,2 +1,49 @@
 .container {
 }
+
+.hwContainer {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(60, 60, 60, 0.04);
+  padding: 32px 40px 40px 40px;
+  margin-bottom: 32px;
+  border: 1px solid #ececec;
+}
+
+.hwTitle {
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 24px;
+}
+
+.infoBlock {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-top: 32px;
+  max-width: 420px;
+}
+
+.infoIcon {
+  width: 28px;
+  height: 28px;
+  background: #f2994a;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.infoText {
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 18px;
+  color: #222;
+  line-height: 1.4;
+  margin: 0;
+}
