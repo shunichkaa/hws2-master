@@ -60,9 +60,12 @@ function Clock() {
 
             <div id={'hw9-more'}>
                 <div className={s.more}>
-                    <span id={'hw9-month'} style={{display: show ? 'inline' : 'none'}}>{stringMonth}</span>
-                    {show && ', '}
-                    <span id={'hw9-date'}>{show ? stringDate : ''}</span>
+                    {show && (
+                        <>
+                            <span id={'hw9-month'}>{stringMonth}</span>,{' '}
+                            <span id={'hw9-date'}>{stringDate}</span>
+                        </>
+                    )}
                 </div>
             </div>
 
