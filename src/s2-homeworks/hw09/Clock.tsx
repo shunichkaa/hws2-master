@@ -34,19 +34,14 @@ function Clock() {
     // Форматирование времени: часы:минуты:секунды
     const stringTime = `${date.getHours().toString().padStart(2, '0')}:${date.getMinutes().toString().padStart(2, '0')}:${date.getSeconds().toString().padStart(2, '0')}`;
     // Форматирование даты: день.месяц.год
-    const stringDate = `${date.getDate().toString().padStart(2, '0')}.${(date.getMonth()+1).toString().padStart(2, '0')}.${date.getFullYear()}`;
+    const stringDate = date.toLocaleDateString('ru-Ru');
 
     // День недели и месяц на английском
-    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    const months = [
-        'January', 'February', 'March', 'April', 'May', 'June',
-        'July', 'August', 'September', 'October', 'November', 'December'
-    ];
-    const stringDay = days[date.getDay()];
-    const stringMonth = months[date.getMonth()];
+    const stringDay = new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(date);
+    // Месяц на английском
+    const stringMonth = new Intl.DateTimeFormat('en-US', { month: 'long' }).format(date);
 
-    // Формируем строку для отображения в "часах"
-    const mainLine = `${stringDay}, ${stringTime}`;
+    // Формируем строку для отображения даты под часами
     const extraLine = `${stringMonth}, ${stringDate}`;
 
     return (
@@ -57,22 +52,17 @@ function Clock() {
                 onMouseEnter={onMouseEnter}
                 onMouseLeave={onMouseLeave}
             >
+                <span id={'hw9-day'}>{stringDay}</span>,{' '}
                 <span id={'hw9-time'}>
-                    <strong>{mainLine}</strong>
+                    <strong>{stringTime}</strong>
                 </span>
             </div>
 
             <div id={'hw9-more'}>
                 <div className={s.more}>
-                    {show ? (
-                        <>
-                            <span id={'hw9-month'}>{extraLine}</span>
-                        </>
-                    ) : (
-                        <>
-                            <br/>
-                        </>
-                    )}
+                    <span id={'hw9-month'} style={{display: show ? 'inline' : 'none'}}>{stringMonth}</span>
+                    {show && ', '}
+                    <span id={'hw9-date'}>{show ? stringDate : ''}</span>
                 </div>
             </div>
 
