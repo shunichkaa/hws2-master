@@ -1,8 +1,22 @@
+/* HW11.module.css */
 .container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 400px;
+    margin: 0 auto;
 }
 
 .wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
 .number {
+    min-width: 30px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #333;
 }
