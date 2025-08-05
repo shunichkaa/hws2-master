@@ -1,23 +1,101 @@
+:root {
+    --color: #000;
+    --background: #fff;
+    --text-color: #000;
+    --font-family: 'Montserrat', sans-serif;
+    --font-weight: 400;
+    --font-size: 14px;
+    --line-height: 14px;
+    --letter-spacing: 0;
+    --select-width: auto;
+    --select-height: auto;
+    --title-font-weight: 600;
+    --title-font-size: 22px;
+    --title-line-height: 22px;
+}
+
 [data-theme='1'] {
     --color: #000000;
     --background: #FFFFFF;
+    --text-color: #000000;
+    --select-width: 111px;
+    --select-height: 17px;
 }
 
 [data-theme='2'] {
     --color: #000000;
     --background: #DDEEFF;
+    --text-color: #000000;
+    --select-width: 33px;
+    --select-height: 17px;
+    --border-color: #A4D1FF;
 }
 
 [data-theme='3'] {
     --color: #FFFFFF;
     --background: #212A34;
+    --text-color: #FFFFFF;
+    --select-width: 177px;
+    --select-height: 27px;
+    --title-font-weight: 600;
+    --title-font-size: 22px;
+    --title-line-height: 22px;
+    --text-background: #FFFFFF;
+    --hw12-text-color: #000000; /* Исправлено: черный цвет для текста на белом фоне */
 }
 
-html {
+html, body {
     background-color: var(--background);
-    color: var(--color);
+    color: var(--text-color);
+}
+
+/* Принудительно применяем цвет темы ко всем элементам */
+[data-theme='3'] * {
+    color: #FFFFFF !important;
 }
 
 .select {
+    color: var(--text-color);
+    background-color: var(--background);
+    font-weight: var(--font-weight);
+    font-size: var(--font-size);
+    line-height: var(--line-height);
+    letter-spacing: var(--letter-spacing);
+    min-width: var(--select-width);
+    min-height: var(--select-height);
+    border: 1px solid;
+    border-color: var(--border-color, #C1C1C1);
+    border-radius: 6px;
+    padding: 2px 6px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
 
+#hw12-text {
+    font-weight: var(--title-font-weight);
+    font-size: var(--title-font-size);
+    line-height: var(--title-line-height);
+    letter-spacing: var(--letter-spacing);
+    color: var(--text-color);
+    background: transparent;
+}
+
+/* Специальное правило для HW12 текста в темной теме */
+[data-theme='3'] #hw12-text {
+    background: var(--text-background) !important;
+    color: var(--hw12-text-color) !important;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: 0;
+    padding: 8px 12px;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+/* Стили для селекта в темной теме */
+[data-theme='3'] .select {
+    color: #FFFFFF !important;
+    background-color: #212A34 !important;
+    border-color: #4A5568 !important;
 }
