@@ -1,22 +1,145 @@
 .buttonsContainer {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 60px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .responseContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    min-height: 300px;
+    padding: 40px 0;
+    background: transparent;
 }
 
 .imageContainer {
+    flex-shrink: 0;
+    width: 300px;
+    height: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
 }
 
 .image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
-.textContainer{
+.textContainer {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+    max-width: 400px;
 }
 
 .code {
+    font-size: 36px;
+    font-weight: 700;
+    color: #2D2D2D;
+    margin: 0;
+    line-height: 1.1;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
 .text {
+    font-size: 18px;
+    color: #525252;
+    line-height: 1.4;
+    margin: 0;
+    font-weight: 400;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
+
 .info {
+    font-size: 16px;
+    color: #737373;
+    line-height: 1.4;
+    margin: 0;
+    font-weight: 400;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+    .responseContainer {
+        gap: 40px;
+    }
+
+    .imageContainer {
+        width: 250px;
+        height: 200px;
+    }
+
+    .code {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .buttonsContainer {
+        gap: 12px;
+        margin-bottom: 40px;
+    }
+
+    .responseContainer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 40px;
+        padding: 30px 20px;
+    }
+
+    .imageContainer {
+        width: 220px;
+        height: 180px;
+    }
+
+    .textContainer {
+        align-items: center;
+        max-width: none;
+    }
+
+    .code {
+        font-size: 28px;
+    }
+
+    .text {
+        font-size: 16px;
+    }
+
+    .info {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .buttonsContainer {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .responseContainer {
+        gap: 30px;
+        padding: 20px 15px;
+    }
+
+    .imageContainer {
+        width: 180px;
+        height: 150px;
+    }
+
+    .code {
+        font-size: 24px;
+    }
 }
